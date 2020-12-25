@@ -51,7 +51,7 @@
 - Thực thi script để thiết lập IP và hostname.
 
   ```sh
-  bash ctl_00_setup_ip.sh
+  ./ctl_00_setup_ip.sh
   ```
   
 Sau khi thực hiện xong, máy chủ sẽ khởi động lại, sử dụng IP `172.16.68.211` để ssh vào và thực hiện theo các bước dưới trên node controller1.
@@ -81,7 +81,7 @@ Sau khi thực hiện xong, máy chủ sẽ khởi động lại, sử dụng IP
 - Thực thi script để thiết lập IP và hostname.
 
   ```sh
-  bash com1_00_setup_ip.sh
+  ./com1_00_setup_ip.sh
   ```
   
 Sau khi thực hiện xong, máy chủ sẽ khởi động lại, sử dụng IP `172.16.68.212` để ssh vào và thực hiện theo các bước dưới trên node compute1.
@@ -110,7 +110,7 @@ Sau khi thực hiện xong, máy chủ sẽ khởi động lại, sử dụng IP
 - Thực thi script để thiết lập IP và hostname.
 
   ```sh
-  bash com2_00_setup_ip.sh
+  ./com2_00_setup_ip.sh
   ```
   
 Sau khi thực hiện xong, máy chủ sẽ khởi động lại, sử dụng IP `172.16.68.213` để ssh vào và thực hiện theo các bước dưới trên node compute2.
@@ -133,13 +133,13 @@ Sau khi thực hiện xong, máy chủ sẽ khởi động lại, sử dụng IP
 - Thực thi script cài đặt các gói bổ trợ trên node controller1
 
   ```sh
-  bash ctl_01_env.sh
+  ./ctl_01_env.sh
   ```
 
 - Thực thi script cài đặt keystone trên controller1
 
   ```sh
-  bash ctl_02_keystone.sh
+  ./ctl_02_keystone.sh
   ```
 
 Sau khi chạy xong script cài đặt keystone, script sẽ sinh ra các file tại `/root/admin-openrc` dùng để xác thực với OpenStack, sử dụng lệnh dưới mỗi khi thao tác với openstack thông qua CLI.
@@ -151,26 +151,26 @@ Sau khi chạy xong script cài đặt keystone, script sẽ sinh ra các file t
 - Thực thi script cài đặt glance trên controller1
 
   ```sh
-  bash ctl_03_glance.sh
+  ./ctl_03_glance.sh
   ```
   
 - Thực thi script cài đặt nova trên controller1
 
   ```sh
-  bash ctl_04_nova.sh
+  ./ctl_04_nova.sh
   ```
 
 
 - Thực thi script cài đặt neutron trên controller1
 
   ```sh
-  bash ctl_05_neutron.sh
+  ./ctl_05_neutron.sh
   ```
 
 - Tới đây có 02 lựa chọn cho việc cài cinder thực hiện script dưới và nhập tùy chọn là `1` hoặc `2` để lựa chọn.
 
   ```sh
-  bash ctl_06_cinder.sh
+  ./ctl_06_cinder.sh
   ```
   - Nhập 1 để cài cinder-volume cùng với controller, lúc này điều kiện cần là có ổ cứng thứ 2 trên controller để tạo các volume.
   - Nhập 2 để KHÔNG cài cinder-volume, lúc này cinder-volume sẽ được cài ở node khác.
@@ -179,7 +179,7 @@ Sau khi chạy xong script cài đặt keystone, script sẽ sinh ra các file t
 - Thực hiện cài đặt horizon
 
 ```sh
-bash ctl_07_horizon.sh
+./ctl_07_horizon.sh
 ```
 
 Lúc này có thể truy cập vào địa chỉ: `http://172.16.68.211/horizon` với Domain là `Default`, User là `admin`, mật khẩu là `Vntp2018` (hoặc xem thêm file `/root/admin-openrc` để biết nếu bạn không nhớ). 
@@ -193,13 +193,13 @@ Lúc này có thể truy cập vào địa chỉ: `http://172.16.68.211/horizon`
   ```sh
   cd /root/queens/
 
-  bash com1_01_env.sh
+  ./com1_01_env.sh
   ```
 
 - Cài đặt Neutron và nova 
 
   ```sh
-  bash com1_02_nova_neutron.sh
+  ./com1_02_nova_neutron.sh
   ```
 
 #### 3.1 Thực hiện trên Compute2
@@ -210,13 +210,13 @@ Lúc này có thể truy cập vào địa chỉ: `http://172.16.68.211/horizon`
   ```sh
   cd /root/queens/
 
-  bash com2_01_env.sh
+  ./com2_01_env.sh
   ```
 
 - Cài đặt Neutron và nova 
 
   ```sh
-  bash com2_02_nova_neutron.sh
+  ./com2_02_nova_neutron.sh
   ```
 
 
@@ -238,7 +238,7 @@ source /root/admin-openrc
   ```sh
   cd UbuntuScriptsQueens
 
-  bash creat_vm.sh
+  ./creat_vm.sh
   ```
   
 - Truy cập vào horizon với địa chỉ `http://172.16.68.211/horizon` để quan sát tiếp (mật khẩu xem ở file `/root/admin-openrc`

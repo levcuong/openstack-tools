@@ -41,7 +41,7 @@
   apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y
   apt-get -y install git curl vim byobu
   
-  git clone https://github.com/congto/openstack-tools.git
+  https://github.com/levcuong/openstack-tools.git
   
   mv openstack-tools/scripts/OpenStack-Queens-No-HA/UbuntuScriptsQueens/ /root/queens/
   
@@ -71,7 +71,7 @@ Sau khi thực hiện xong, máy chủ sẽ khởi động lại, sử dụng IP
   apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y
   apt-get -y install git curl vim byobu
   
-  git clone https://github.com/congto/openstack-tools.git
+  https://github.com/levcuong/openstack-tools.git
   
   mv openstack-tools/scripts/OpenStack-Queens-No-HA/UbuntuScriptsQueens/ /root/queens/
   
@@ -100,7 +100,7 @@ Sau khi thực hiện xong, máy chủ sẽ khởi động lại, sử dụng IP
   apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y
   apt-get -y install git curl vim byobu
   
-  git clone https://github.com/congto/openstack-tools.git
+  https://github.com/levcuong/openstack-tools.git
   
   mv openstack-tools/scripts/OpenStack-Queens-No-HA/UbuntuScriptsQueens/ /root/queens/
   

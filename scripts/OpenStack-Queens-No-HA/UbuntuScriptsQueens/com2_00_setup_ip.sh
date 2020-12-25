@@ -22,15 +22,15 @@ auto lo
 iface lo inet loopback
 
 # VM network
-auto ens3
-iface ens3 inet static
+auto $INTERFACE1
+iface $INTERFACE1 inet static
 address $COM2_IP_NIC1
 netmask $NETMASK_NIC1
 
 
 ### API
-auto ens4
-iface ens4 inet static
+auto $INTERFACE2
+iface $INTERFACE2 inet static
 address $COM2_IP_NIC2
 netmask $NETMASK_NIC2
 gateway $GATAWAY_NIC2
@@ -38,8 +38,8 @@ dns-nameservers 8.8.8.8
 
 # Provider Network
 # MGNT
-auto ens5
-iface ens5 inet static
+auto $INTERFACE3
+iface $INTERFACE3 inet static
 address $COM2_IP_NIC3
 netmask $NETMASK_NIC3
 EOF

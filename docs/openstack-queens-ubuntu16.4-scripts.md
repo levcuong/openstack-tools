@@ -43,7 +43,7 @@
   
   git clone https://github.com/levcuong/openstack-tools.git
   
-  mv openstack-tools/scripts/OpenStack-Queens-No-HA/UbuntuScriptsQueens/ /root/queens/
+  cp -r openstack-tools/scripts/OpenStack-Queens-No-HA/UbuntuScriptsQueens/ /root/queens/
   
   cd queens/  && chmod +x *
   ```
@@ -73,7 +73,7 @@ Sau khi thực hiện xong, máy chủ sẽ khởi động lại, sử dụng IP
   
   git clone https://github.com/levcuong/openstack-tools.git
   
-  mv openstack-tools/scripts/OpenStack-Queens-No-HA/UbuntuScriptsQueens/ /root/queens/
+  cp -r openstack-tools/scripts/OpenStack-Queens-No-HA/UbuntuScriptsQueens/ /root/queens/
   
   cd queens/  && chmod +x *
   ```
@@ -102,7 +102,7 @@ Sau khi thực hiện xong, máy chủ sẽ khởi động lại, sử dụng IP
   
   git clone https://github.com/levcuong/openstack-tools.git
   
-  mv openstack-tools/scripts/OpenStack-Queens-No-HA/UbuntuScriptsQueens/ /root/queens/
+  cp -r openstack-tools/scripts/OpenStack-Queens-No-HA/UbuntuScriptsQueens/ /root/queens/
   
   cd queens/ && chmod +x *
   ```

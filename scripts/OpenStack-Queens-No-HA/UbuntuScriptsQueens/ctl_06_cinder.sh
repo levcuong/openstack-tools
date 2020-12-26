@@ -39,8 +39,7 @@ function cinder_install_config() {
 	echocolor "Cai dat cinder"
 	sleep 3
 	apt install -y cinder-api cinder-scheduler
-  apt install -y lvm2 thin-provisioning-tools
-  apt install -y cinder-volume
+  	apt install -y cinder-volume
 	ctl_cinder_conf=/etc/cinder/cinder.conf
   
 	cp $ctl_cinder_conf $ctl_cinder_conf.orig
@@ -121,15 +120,27 @@ function cinder_enable_restart() {
 	fi
 }
 
+# Function insall lvm2
+function install_lvm2 () {
+	echocolor "Install lvm2"
+	sleep 3
+	apt install -y lvm2 thin-provisioning-tools
+	systemctl enable lvm2-lvmetad.service
+	systemctl start lvm2-lvmetad.service
+}
+
 function create_lvm() {
 	if [ "$var_block" == "aio" ]; then
 		echocolor "Cau hinh LVM"
-		pvcreate /dev/vdb
-		vgcreate cinder-volumes /dev/vdb
+		# install lvm2
+		install_lvm2
+		
+		pvcreate /dev/sdb
+		vgcreate cinder-volumes /dev/sdb
 
 		cp /etc/lvm/lvm.conf /etc/lvm/lvm.conf.orig
     
-    sed -i '130i\        filter = [ "a/vdb/", "r/.*/"]' /etc/lvm/lvm.conf
+    sed -i '130i\        filter = [ "a/sdb/", "r/.*/"]' /etc/lvm/lvm.conf
     
 		#sed  -r -i 's#(filter = )(\[ "a/\.\*/" \])#\1["a\/vdb\/", "r/\.\*\/"]#g' /etc/lvm/lvm.conf
     # fix filter cua lvm tren CentOS 7.4, chen vao dong 141 cua file /etc/lvm/lvm.conf

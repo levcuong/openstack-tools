@@ -9,6 +9,8 @@ source function.sh
 echocolor "Tao flavor"
 sleep 3
 openstack flavor create --id 0 --vcpus 1 --ram 64 --disk 1 m1.nano
+openstack flavor create --id 1 --vcpus 1 --ram 512 --disk 1 m1.tiny
+openstack flavor create --id 2 --vcpus 1 --ram 2048 --disk 20 m1.small
 
 echocolor "Mo rule ping"
 sleep 5

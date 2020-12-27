@@ -38,8 +38,7 @@ function neutron_install () {
 	echocolor "Install the components"
 	sleep 3
 	apt install neutron-server neutron-plugin-ml2 \
-	  neutron-linuxbridge-agent neutron-l3-agent \
-	  neutron-dhcp-agent -y 
+	  neutron-linuxbridge-agent neutron-l3-agent -y
 }
 
 # Function configure the server component
@@ -209,7 +208,7 @@ function neutron_restart () {
 	service neutron-linuxbridge-agent restart
 	#service neutron-dhcp-agent restart
 	#service neutron-metadata-agent restart
-  service neutron-l3-agent restart
+  	service neutron-l3-agent restart
 }
 
 

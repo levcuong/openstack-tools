@@ -38,7 +38,8 @@ function neutron_install () {
 	echocolor "Install the components"
 	sleep 3
 	apt install neutron-server neutron-plugin-ml2 \
-	  neutron-linuxbridge-agent neutron-l3-agent -y 
+	  neutron-linuxbridge-agent neutron-l3-agent \
+	  neutron-dhcp-agent -y 
 }
 
 # Function configure the server component
@@ -199,10 +200,10 @@ function neutron_restart () {
 	sleep 3
 	service nova-api restart
 	service neutron-server restart
-  systemctl stop neutron-dhcp-agent
+  	systemctl stop neutron-dhcp-agent
 	systemctl stop neutron-metadata-agent
   
-  systemctl disable neutron-dhcp-agent
+  	systemctl disable neutron-dhcp-agent
 	systemctl disable neutron-metadata-agent
   
 	service neutron-linuxbridge-agent restart

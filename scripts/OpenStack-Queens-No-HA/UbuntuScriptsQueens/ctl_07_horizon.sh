@@ -70,7 +70,7 @@ sed -i "s/'enable_firewall': True,/'enable_firewall': False,/g" $horizonfile
 sed -i "s/'enable_vpn': True,/'enable_vpn': False,/g" $horizonfile
 sed -i "s/'enable_fip_topology_check': True,/'enable_fip_topology_check': False,/g" $horizonfile
 
-sed -i 's/TIME_ZONE = "UTC"/TIME_ZONE = "Asia\/Ho_Chi_Minh"/g' $horizonfile
+sed -i 's/TIME_ZONE = "UTC"/TIME_ZONE = "Asia\/Seoul"/g' $horizonfile
 }
 
 # Function restart installation
